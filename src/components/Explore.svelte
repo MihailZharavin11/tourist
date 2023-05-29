@@ -65,6 +65,7 @@
 				grid-template: 1fr 1fr/1fr;
 				align-self: center;
 				justify-content: center;
+				gap: 30px;
 			}
 			.description__content {
 				display: flex;
@@ -113,8 +114,8 @@
 				justify-content: center;
 				align-items: center;
 				img {
-					max-height: 300px;
-					max-width: 350px;
+					max-height: 250px;
+					max-width: 250px;
 					width: 100%;
 				}
 			}

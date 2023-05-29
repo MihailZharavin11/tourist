@@ -55,9 +55,6 @@
 				padding: 0px;
 				box-shadow: none;
 			}
-			@media (max-width: 768px) {
-				padding: 30px;
-			}
 			.description {
 				display: flex;
 				flex-direction: column;
@@ -77,11 +74,11 @@
 				}
 			}
 			.video {
-				border: 1px solid red;
 				video {
 					max-width: 524px;
 					max-height: 296px;
-					@media (max-width: 1024px) {
+					@media (max-width: 768px) {
+						min-height: 260px;
 						width: 100%;
 						object-fit: fill;
 					}
