@@ -1,11 +1,15 @@
+<script>
+	import { t } from '$lib/i18n/config';
+</script>
+
 <div class="wrapper">
 	<div class="description">
-		<h1 class="title">Testimonials</h1>
-		<p class="text">People love what we do and we want to let your know</p>
+		<h1 class="title">{$t('translations.testimonials.title')}</h1>
+		<p class="text">{$t('translations.testimonials.subTitle')}</p>
 	</div>
 	<div class="content">
 		<div class="item">
-			<h1 class="item__title">"Since using iTourist our trips have been much more enjoyable."</h1>
+			<h1 class="item__title">{$t('translations.testimonials.testimonial1.title')}</h1>
 			<div class="item__description">
 				<div class="item__stars">
 					<svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
@@ -34,13 +38,13 @@
 						/>
 					</svg>
 				</div>
-				<p class="item__name">Jack Sibire</p>
-				<p class="item__profession">Tour Guide, iTourist</p>
+				<p class="item__name">{$t('translations.testimonials.testimonial1.name')}</p>
+				<p class="item__profession">{$t('translations.testimonials.testimonial1.profession')}</p>
 			</div>
 		</div>
 		<div class="item">
 			<h1 class="item__title">
-				"I recommend iTourist to any traveler looking for the best attractions in Israel."
+				{$t('translations.testimonials.testimonial2.title')}
 			</h1>
 			<div class="item__description">
 				<div class="item__stars">
@@ -70,12 +74,12 @@
 						/>
 					</svg>
 				</div>
-				<p class="item__name">Adele Mouse</p>
-				<p class="item__profession">Traveler, iTourist</p>
+				<p class="item__name">{$t('translations.testimonials.testimonial2.name')}</p>
+				<p class="item__profession">{$t('translations.testimonials.testimonial2.profession')}</p>
 			</div>
 		</div>
 		<div class="item">
-			<h1 class="item__title">"I can't imagine traveling to Israel without it."</h1>
+			<h1 class="item__title">{$t('translations.testimonials.testimonial3.title')}</h1>
 			<div class="item__description">
 				<div class="item__stars">
 					<svg
@@ -134,8 +138,8 @@
 						/>
 					</svg>
 				</div>
-				<p class="item__name">Ben Clock</p>
-				<p class="item__profession">CEO, iTourist</p>
+				<p class="item__name">{$t('translations.testimonials.testimonial3.name')}</p>
+				<p class="item__profession">{$t('translations.testimonials.testimonial3.profession')}</p>
 			</div>
 		</div>
 	</div>

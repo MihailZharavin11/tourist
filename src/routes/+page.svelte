@@ -7,12 +7,16 @@
 	import Footer from '../components/Footer.svelte';
 	import Header from '../components/Header.svelte';
 	import Introducing from '../components/Introducing.svelte';
-	import Menu from '../components/Menu.svelte';
 	import Pricing from '../components/Pricing.svelte';
 	import Step from '../components/Step.svelte';
 	import Testimonials from '../components/Testimonials.svelte';
 	import '../reset.scss';
 	import { onMount } from 'svelte';
+	import { loadTranslations, locale, locales } from '../lib/i18n/config';
+
+	onMount(async () => {
+		await loadTranslations(locale.get() || 'en');
+	});
 </script>
 
 <div class="wrapper">

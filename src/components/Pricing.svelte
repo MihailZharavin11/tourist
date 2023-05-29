@@ -1,53 +1,54 @@
 <script>
+	import { t } from '$lib/i18n/config';
 	import Button from './Button.svelte';
 </script>
 
 <div id="pricing" class="wrapper">
-	<h1 class="title">Pricing</h1>
+	<h1 class="title">{$t('translations.pricing.title')}</h1>
 	<div class="cards">
 		<div class="card">
 			<div class="card__header">
-				<h1 class="card__title">Top-up SIM-card</h1>
+				<h1 class="card__title">{$t('translations.pricing.card1.title')}</h1>
 			</div>
 			<div class="card__content">
-				<div class="content__title">Package price + 5₪ fee</div>
+				<div class="content__title">{$t('translations.pricing.card1.price')}</div>
 				<ul class="content__description">
-					<li class="content__text">Stay connected 24/7</li>
+					<li class="content__text">{$t('translations.pricing.card1.description.description1')}</li>
 				</ul>
 			</div>
-			<Button color="white" title="Go to the App and orded" />
+			<Button color="white" title={$t('translations.pricing.button')} />
 		</div>
 		<div class="card">
 			<div class="card__header">
-				<h1 class="card__title">Basic medical package</h1>
+				<h1 class="card__title">{$t('translations.pricing.card2.title')}</h1>
 			</div>
 			<div class="card__content">
-				<div class="content__title">250₪</div>
+				<div class="content__title">{$t('translations.pricing.card1.price')}</div>
 				<ul class="content__description">
 					<li class="content__text">
-						Virtual appointment with a doctor in 15-30 minutes after the payment
+						{$t('translations.pricing.card2.description.description1')}
 					</li>
-					<li class="content__text">Medical prescriptions</li>
-					<li class="content__text">Laboratory test prescriptions</li>
+					<li class="content__text">{$t('translations.pricing.card2.description.description2')}</li>
+					<li class="content__text">{$t('translations.pricing.card2.description.description3')}</li>
 				</ul>
 			</div>
-			<Button color="white" title="Go to the App and orded" />
+			<Button color="white" title={$t('translations.pricing.button')} />
 		</div>
 		<div class="card">
 			<div class="card__header">
-				<h1 class="card__title">Extended medical package</h1>
+				<h1 class="card__title">{$t('translations.pricing.card3.title')}</h1>
 			</div>
 			<div class="card__content">
-				<div class="content__title">400₪</div>
+				<div class="content__title">{$t('translations.pricing.card3.price')}</div>
 				<ul class="content__description">
 					<li class="content__text">
-						2 virtual appointments with a doctor in 15-30 minutes after the payment*
+						{$t('translations.pricing.card3.description.description1')}
 					</li>
-					<li class="content__text">Medical prescriptions</li>
-					<li class="content__text">Laboratory test prescriptions</li>
+					<li class="content__text">{$t('translations.pricing.card3.description.description2')}</li>
+					<li class="content__text">{$t('translations.pricing.card3.description.description3')}</li>
 				</ul>
 			</div>
-			<Button color="white" title="Go to the App and orded" />
+			<Button color="white" title={$t('translations.pricing.button')} />
 		</div>
 	</div>
 </div>

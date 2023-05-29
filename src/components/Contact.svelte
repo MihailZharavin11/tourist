@@ -1,31 +1,32 @@
 <script>
+	import { t } from '$lib/i18n/config';
 	import Button from './Button.svelte';
 </script>
 
 <div id="contact" class="wrapper">
-	<h1 class="title">Contact us</h1>
+	<h1 class="title">{$t('translations.contact.title')}</h1>
 	<div class="description">
 		<div class="contact">
 			<form class="contact__form">
-				<input placeholder="Name" class="contact__input" />
-				<input placeholder="Email Adress" class="contact__input" />
-				<input placeholder="Write your message" class="contact__input" />
+				<input placeholder={$t('translations.contact.form.name')} class="contact__input" />
+				<input placeholder={$t('translations.contact.form.email')} class="contact__input" />
+				<input placeholder={$t('translations.contact.form.message')} class="contact__input" />
 				<Button title="Send" color="black" border="1px solid black" background="white" />
 			</form>
 		</div>
 		<div class="info">
-			<h1 class="info__title">Contact information</h1>
+			<h1 class="info__title">{$t('translations.contact.info.title')}</h1>
 			<div class="info__content">
-				<p class="text">Adress</p>
-				<p class="sub__text">10 Carlebach St, Tel Aviv, Israel</p>
+				<p class="text">{$t('translations.contact.info.adress')}</p>
+				<p class="sub__text">{import.meta.env.VITE_ADRESS}</p>
 			</div>
 			<div class="info__content">
-				<p class="text">Phone number</p>
-				<p class="sub__text">+972 3-123-4567</p>
+				<p class="text">{$t('translations.contact.info.phone')}</p>
+				<p class="sub__text">{import.meta.env.VITE_PHONE}</p>
 			</div>
 			<div class="info__content">
-				<p class="text">Email</p>
-				<p class="sub__text">info@itourist-il.com</p>
+				<p class="text">{$t('translations.contact.info.email')}</p>
+				<p class="sub__text">{import.meta.env.VITE_EMAIL}</p>
 			</div>
 		</div>
 	</div>

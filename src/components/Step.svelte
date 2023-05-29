@@ -1,6 +1,7 @@
 <script>
 	import Button from './Button.svelte';
 	import Step from '../images/step.png';
+	import { t } from '$lib/i18n/config';
 </script>
 
 <div class="wrapper">
@@ -8,31 +9,30 @@
 		<div class="description">
 			<img class="description__img" src={Step} alt="Step" />
 			<div class="description__content">
-				<h1 class="description__title">How to use iTourist</h1>
-				<p class="description__text">Just 3 simple steps to user our App.</p>
-				<Button title="Launch the App" color="white" />
+				<h1 class="description__title">{$t('translations.step.title')}</h1>
+				<p class="description__text">{$t('translations.step.subTitle')}</p>
+				<Button title={$t('translations.step.button')} color="white" />
 			</div>
 		</div>
 		<div class="steps">
 			<div class="step__item">
-				<h1 class="item__title">Step 1</h1>
+				<h1 class="item__title">{$t('translations.step.step1.title')}</h1>
 				<p class="item__text">
-					Click on 'Launch the App' button and sign-up by phone number or email using one-time
-					password
+					{$t('translations.step.step1.subTitle')}
 				</p>
 			</div>
 
 			<div class="step__item">
-				<h1 class="item__title">Step 2</h1>
+				<h1 class="item__title">{$t('translations.step.step2.title')}</h1>
 				<p class="item__text">
-					Fill out your profile: name, email, phone numbers and country of origin.
+					{$t('translations.step.step2.subTitle')}
 				</p>
 			</div>
 
 			<div class="step__item">
-				<h1 class="item__title">Step 3</h1>
+				<h1 class="item__title">{$t('translations.step.step3.title')}</h1>
 				<p class="item__text">
-					You're ready to recharge you SIM card or book digital appointment within the App!
+					{$t('translations.step.step3.subTitle')}
 				</p>
 			</div>
 		</div>

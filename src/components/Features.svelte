@@ -1,21 +1,21 @@
 <script>
 	import Button from './Button.svelte';
 	import Welcome from '../images/welcome.png';
+	import { t } from '$lib/i18n/config';
 </script>
 
 <div class="wrapper">
 	<div class="description">
-		<p class="description__subtitle">iTourist</p>
-		<h1 class="description__title">Features already available</h1>
+		<p class="description__subtitle">{$t('translations.features.subTitle')}</p>
+		<h1 class="description__title">{$t('translations.features.title')}</h1>
 		<p class="description__text">
-			Within iTourist you are able to:
-			<br />- Recharge your israeli SIM-card
-			<br />- Book an digital appointment with a doctor in 5 minutes and connect with a doctor in
-			15-30 minutes.
+			{$t('translations.features.text')}
+			<br />- {$t('translations.features.subText1')}
+			<br />- {$t('translations.features.subText2')}
 		</p>
 		<Button
 			boxShadow={true}
-			title="Try now"
+			title={$t('translations.features.button')}
 			color="black"
 			background="white"
 			border={'1px solid black'}

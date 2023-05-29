@@ -1,9 +1,9 @@
 <script>
 	import Button from './Button.svelte';
 
-	import { clickOutside } from '../utils/clickOutside';
 	import { scrolltoElement } from '../utils/scrollToElement';
 	import Languages from './Languages.svelte';
+	import { t } from '../lib/i18n/config';
 
 	let isOpenBurger = false;
 
@@ -12,7 +12,6 @@
 	};
 </script>
 
-<!-- <Menu {isOpenBurger} /> -->
 <div id="header" class="header">
 	<div class="links">
 		<a class="links__logo" href="/">iTourist</a>
@@ -34,16 +33,24 @@
 				>
 					<ul class="menu">
 						<li>
-							<a class="link" on:click={() => scrolltoElement('home')}>Home</a>
+							<a class="link" on:click={() => scrolltoElement('home')}
+								>{$t('translations.header.links.home')}</a
+							>
 						</li>
 						<li>
-							<a class="link" on:click={() => scrolltoElement('pricing')}>Pricing</a>
+							<a class="link" on:click={() => scrolltoElement('pricing')}
+								>{$t('translations.header.links.pricing')}</a
+							>
 						</li>
 						<li>
-							<a class="link" on:click={() => scrolltoElement('about')}>About Us</a>
+							<a class="link" on:click={() => scrolltoElement('about')}
+								>{$t('translations.header.links.aboutUs')}</a
+							>
 						</li>
 						<li>
-							<a class="link" on:click={() => scrolltoElement('contact')}>Contact</a>
+							<a class="link" on:click={() => scrolltoElement('contact')}
+								>{$t('translations.header.links.contact')}</a
+							>
 						</li>
 						<li>
 							<Languages />
@@ -54,27 +61,33 @@
 		</div>
 		<ul class="links__list">
 			<li>
-				<a class="link" on:click={() => scrolltoElement('home')}>Home</a>
+				<a class="link" on:click={() => scrolltoElement('home')}
+					>{$t('translations.header.links.home')}</a
+				>
 			</li>
 			<li>
-				<a class="link" on:click={() => scrolltoElement('pricing')}>Pricing</a>
+				<a class="link" on:click={() => scrolltoElement('pricing')}
+					>{$t('translations.header.links.pricing')}</a
+				>
 			</li>
 			<li>
-				<a class="link" on:click={() => scrolltoElement('about')}>About Us</a>
+				<a class="link" on:click={() => scrolltoElement('about')}
+					>{$t('translations.header.links.aboutUs')}</a
+				>
 			</li>
 			<li>
-				<a class="link" on:click={() => scrolltoElement('contact')}>Contact</a>
+				<a class="link" on:click={() => scrolltoElement('contact')}
+					>{$t('translations.header.links.contact')}</a
+				>
 			</li>
 		</ul>
 	</div>
 
 	<div class="buttons">
-		<!-- <Button title="Log In" background="none" /> -->
 		<div class="languages">
 			<Languages />
 		</div>
-		<Button title="Launch App" color="white" />
-		<!-- svelte-ignore a11y-click-events-have-key-events -->
+		<Button title={$t('translations.header.button')} color="white" />
 	</div>
 </div>
 

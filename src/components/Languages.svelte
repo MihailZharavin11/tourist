@@ -4,23 +4,28 @@
 	import Russia from '../images/countries/ru.png';
 	import England from '../images/countries/en.png';
 	import { clickOutside } from '../utils/clickOutside';
+	import { locale } from '$lib/i18n/config';
 
 	const countries = [
 		{
 			value: Spain,
-			img: Spain
+			img: Spain,
+			locale: 'esp'
 		},
 		{
 			value: France,
-			img: France
+			img: France,
+			locale: 'fr'
 		},
 		{
 			value: Russia,
-			img: Russia
+			img: Russia,
+			locale: 'ru'
 		},
 		{
 			value: England,
-			img: England
+			img: England,
+			locale: 'en'
 		}
 	];
 	let selectedCountry = England;
@@ -53,6 +58,7 @@
 							<img
 								on:click={() => {
 									selectedCountry = country.value;
+									locale.set(country.locale);
 								}}
 								src={country.img}
 								alt="country"

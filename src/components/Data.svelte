@@ -1,6 +1,7 @@
 <script>
 	import Button from './Button.svelte';
 	import Man from '../images/man.png';
+	import { t } from '$lib/i18n/config';
 </script>
 
 <div class="wrapper">
@@ -8,15 +9,14 @@
 		<img src={Man} alt="Man" />
 	</div>
 	<div class="description">
-		<p class="description__subTitle">iTourist</p>
-		<h1 class="description__title">All your data is safe with us</h1>
+		<p class="description__subTitle">{$t('translations.data.subTitle')}</p>
+		<h1 class="description__title">{$t('translations.data.title')}</h1>
 		<p class="description__text">
-			We take your data security seriously, which is why we use advanced encryption protocols to
-			protect your files in the cloud. Your data is safe and secure with us.
+			{$t('translations.data.text')}
 		</p>
 		<Button
 			boxShadow={true}
-			title="Try now"
+			title={$t('translations.data.button')}
 			color="black"
 			background="white"
 			border={'1px solid black'}

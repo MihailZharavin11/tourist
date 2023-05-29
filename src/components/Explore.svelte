@@ -5,21 +5,22 @@
 	import Org2 from '../images/org2.png';
 	import Org3 from '../images/org3.png';
 	import Org4 from '../images/org4.png';
+	import { t } from '$lib/i18n/config';
 </script>
 
 <div id="home" class="wrapper">
 	<div class="description__wrapper">
 		<div class="description__content">
-			<p class="description__assistant">- Explore Israel with virtual assistant</p>
-			<h1 class="description__title">The best way to explore Israel safely</h1>
+			<p class="description__assistant">{$t('translations.explore.subTitle')}</p>
+			<h1 class="description__title">{$t('translations.explore.title')}</h1>
 			<p class="description__text">
-				Here you can find doctors, recharge SIM card, find the best attcations in Israel.
+				{$t('translations.explore.text')}
 			</p>
 			<div class="buttons">
-				<Button title="Use the App" color="white" />
+				<Button title={$t('translations.explore.buttonApp')} color="white" />
 				<Button
 					boxShadow={true}
-					title="See how it works"
+					title={$t('translations.explore.buttonWorks')}
 					color="black"
 					background="white"
 					border={'1px solid grey'}
@@ -31,7 +32,7 @@
 		</div>
 	</div>
 	<div class="organizations">
-		<p>Trusted by individuals and organizations around the world</p>
+		<p>{$t('translations.explore.organizationText')}</p>
 		<div class="organization__images">
 			<img src={Org1} alt="Organization1" />
 			<img src={Org2} alt="Organization2" />
@@ -118,13 +119,7 @@
 					order: 1;
 				}
 				img {
-					max-height: 300px;
-					max-width: 300px;
-					width: 100%;
-					@media (max-width: 640px) {
-						max-height: 250px;
-						max-width: 200px;
-					}
+					width: 25%;
 				}
 			}
 		}

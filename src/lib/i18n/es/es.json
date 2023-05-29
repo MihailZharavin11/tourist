@@ -1,0 +1,138 @@
+{
+	"header": {
+		"links": {
+			"home": "Home",
+			"pricing": "Pricing",
+			"aboutUs": "About Us",
+			"contact": "Contact"
+		},
+		"button": "Launch App"
+	},
+	"explore": {
+		"subTitle": "- Explore Israel with virtual assistant",
+		"title": "The best way to explore Israel safely",
+		"text": "Here you can find doctors, recharge SIM card, find the best attcations in Israel.",
+		"buttonApp": "Use the App",
+		"buttonWorks": "See how it works",
+		"organizationText": "Trusted by individuals and organizations around the world"
+	},
+	"introducing": {
+		"title": "Introducing iTourist",
+		"text": "Watch the video to see how we can make easier your stay in Israel.",
+		"button": "Use the App"
+	},
+	"data": {
+		"subTitle": "iTourist",
+		"title": "All your data is safe with us",
+		"text": "We take your data security seriously, which is why we use advanced encryption protocols to protect your files in the cloud. Your data is safe and secure with us.",
+		"button": "Try now"
+	},
+	"features": {
+		"subTitle": "iTourist",
+		"title": "Features already available",
+		"text": "Within iTourist you are able to:",
+		"subText1": "Recharge your israeli SIM-card",
+		"subText2": "Book an digital appointment with a doctor in 5 minutes and connect with a doctor in 15-30 minutes.",
+		"button": "Try now"
+	},
+	"step": {
+		"title": "How to use iTourist",
+		"subTitle": "Just 3 simple steps to user our App.",
+		"button": "Launch the App",
+		"step1": {
+			"title": "Step 1",
+			"subTitle": "Click on 'Launch the App' button and sign-up by phone number or email using one-time password"
+		},
+		"step2": {
+			"title": "Step 2",
+			"subTitle": "Fill out your profile: name, email, phone numbers and country of origin."
+		},
+		"step3": {
+			"title": "Step 3",
+			"subTitle": "You're ready to recharge you SIM card or book digital appointment within the App!"
+		}
+	},
+	"testimonials": {
+		"title": "Testimonials",
+		"subTitle": "People love what we do and we want to let your know",
+		"testimonial1": {
+			"title": "Since using iTourist our trips have been much more enjoyable.",
+			"name": "Jack Sibire",
+			"profession": "Tour Guide, iTourist"
+		},
+		"testimonial2": {
+			"title": "I recommend iTourist to any traveler looking for the best attractions in Israel.",
+			"name": "Adele Mouse",
+			"profession": "Traveler, iTourist"
+		},
+		"testimonial3": {
+			"title": "I can't imagine traveling to Israel without it.",
+			"name": "Ben Clock",
+			"profession": "CEO, iTourist"
+		}
+	},
+	"pricing": {
+		"title": "Pricing",
+		"button": "Go to the App and order",
+		"card1": {
+			"title": "Top-up SIM-card",
+			"price": "Package price + 5₪ fee",
+			"description": {
+				"description1": "Stay connected 24/7"
+			}
+		},
+		"card2": {
+			"title": "Basic medical package",
+			"price": "250₪",
+			"description": {
+				"description1": "Virtual appointment with a doctor in 15-30 minutes after the payment",
+				"description2": "Medical prescriptions",
+				"description3": "Laboratory test prescriptions"
+			}
+		},
+		"card3": {
+			"title": "Extended medical package",
+			"price": "400₪",
+			"description": {
+				"description1": "2 virtual appointments with a doctor in 15-30 minutes after the payment",
+				"description2": "Medical prescriptions",
+				"description3": "Laboratory test prescriptions"
+			}
+		}
+	},
+	"contact": {
+		"title": "Contact us",
+
+		"form": {
+			"name": "Name",
+			"email": "Email",
+			"message": "Write your message"
+		},
+		"info": {
+			"title": "Contact information",
+			"adress": "Adress",
+			"phone": "Phone number",
+			"email": "Email"
+		}
+	},
+	"footer": {
+		"title": "iTourist",
+		"year": "2023 © iTourist All rights reserved.",
+		"links": {
+			"home": "Home",
+			"pricing": "Pricing",
+			"aboutUs": "About Us",
+			"contact": "Contact"
+		},
+		"socialMedia": {
+			"facebook": "Facebook",
+			"instagram": "Instagram",
+			"twitter": "Twitter",
+			"linkedIn": "LinkedIn"
+		},
+		"options": {
+			"privacyPolicy": "Privacy Policy",
+			"termsOfService": "Terms Of Service"
+		}
+	}
+}
