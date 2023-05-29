@@ -60,6 +60,9 @@
 			@media (max-width: 1280px) {
 				grid-template: 1fr 1fr/1fr;
 			}
+			@media (max-width: 1024px) {
+				box-shadow: none;
+			}
 			@media (max-width: 640px) {
 				gap: 20px;
 			}

@@ -38,7 +38,6 @@
 		.container {
 			padding: 41px 144px 45px;
 			@media (max-width: 768px) {
-				border: 1px solid red;
 				padding: 50px;
 			}
 		}

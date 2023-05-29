@@ -73,6 +73,7 @@
 				gap: 20px;
 				@media (max-width: 1024px) {
 					align-items: start;
+					order: 2;
 				}
 
 				@media (max-width: 640px) {
@@ -113,10 +114,17 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
+				@media (max-width: 1024px) {
+					order: 1;
+				}
 				img {
-					max-height: 250px;
-					max-width: 250px;
+					max-height: 300px;
+					max-width: 300px;
 					width: 100%;
+					@media (max-width: 640px) {
+						max-height: 250px;
+						max-width: 250px;
+					}
 				}
 			}
 		}

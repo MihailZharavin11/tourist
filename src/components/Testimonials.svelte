@@ -160,7 +160,7 @@
 			gap: 20px;
 
 			.title {
-				@include adaptive-FS(24, 48);
+				@include adaptive-FS(20, 48);
 				font-weight: bold;
 			}
 			.text {
@@ -210,7 +210,8 @@
 						gap: 10px;
 					}
 					.item__name {
-						font-size: 20px;
+						@include adaptive-FS(18, 20);
+
 						font-weight: bold;
 					}
 					.item__text {
