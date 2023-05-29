@@ -83,10 +83,6 @@
 				display: flex;
 				flex-direction: column;
 				gap: 10px;
-				background: transparent;
-				-webkit-box-shadow: 1px 10px 39px 4px rgba(0, 0, 0, 0.54);
-				-moz-box-shadow: 1px 10px 39px 4px rgba(0, 0, 0, 0.54);
-				box-shadow: 1px 10px 39px 4px rgba(0, 0, 0, 0.54);
 				li {
 					width: 100%;
 					z-index: 100;

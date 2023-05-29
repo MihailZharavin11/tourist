@@ -1,9 +1,7 @@
-<script lang="ts">
+<script>
 	import Button from './Button.svelte';
 
 	import { clickOutside } from '../utils/clickOutside';
-	import Menu from './Menu.svelte';
-	import { getContext, onMount } from 'svelte';
 	import { scrolltoElement } from '../utils/scrollToElement';
 	import Languages from './Languages.svelte';
 
@@ -14,12 +12,46 @@
 	};
 </script>
 
-<Menu {isOpenBurger} />
+<!-- <Menu {isOpenBurger} /> -->
 <div id="header" class="header">
 	<div class="links">
 		<a class="links__logo" href="/">iTourist</a>
-		<div on:click={handleBurgerMenu} class="burger">
-			<span />
+		<!-- svelte-ignore a11y-click-events-have-key-events -->
+		<div
+			on:click={(e) => {
+				e.stopPropagation();
+				handleBurgerMenu();
+			}}
+			class="burgerWrapper"
+		>
+			<div class="burger">
+				<span />
+				<!-- svelte-ignore a11y-click-events-have-key-events -->
+				<div
+					on:click={(e) => {
+						e.stopPropagation();
+					}}
+					class="menuWrapper {isOpenBurger ? '' : 'hidden'}"
+				>
+					<ul class="menu">
+						<li>
+							<a class="link" on:click={() => scrolltoElement('home')}>Home</a>
+						</li>
+						<li>
+							<a class="link" on:click={() => scrolltoElement('pricing')}>Pricing</a>
+						</li>
+						<li>
+							<a class="link" on:click={() => scrolltoElement('about')}>About Us</a>
+						</li>
+						<li>
+							<a class="link" on:click={() => scrolltoElement('contact')}>Contact</a>
+						</li>
+						<li>
+							<Languages />
+						</li>
+					</ul>
+				</div>
+			</div>
 		</div>
 		<ul class="links__list">
 			<li>
@@ -223,6 +255,41 @@
 							transform: scale(1.2);
 						}
 					}
+				}
+			}
+		}
+
+		.burgerWrapper {
+			position: relative;
+			.menuWrapper {
+				width: 200px;
+				position: absolute;
+				top: 30px;
+				left: 0;
+				padding: 10px 10px;
+				background: white;
+				.menu {
+					display: flex;
+					flex-direction: column;
+					gap: 20px;
+					opacity: 1;
+					transition: all 0.5s ease;
+
+					li {
+						transition: all 0.5s ease;
+						&:hover {
+							transform: translateX(5px);
+							transition: all 0.5s ease;
+						}
+					}
+					.link {
+						color: black;
+						cursor: pointer;
+						font-size: 20px;
+					}
+				}
+				&.hidden {
+					display: none;
 				}
 			}
 		}

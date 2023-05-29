@@ -13,16 +13,6 @@
 	import Testimonials from '../components/Testimonials.svelte';
 	import '../reset.scss';
 	import { onMount } from 'svelte';
-
-	onMount(() => {
-		const appHeight = () => {
-			const doc = document.documentElement;
-			doc.style.setProperty('--app-height', `${window.innerHeight}px`);
-			console.log('asd');
-		};
-		window.addEventListener('resize', appHeight);
-		appHeight();
-	});
 </script>
 
 <div class="wrapper">
