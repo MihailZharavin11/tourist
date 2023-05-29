@@ -123,7 +123,7 @@
 					width: 100%;
 					@media (max-width: 640px) {
 						max-height: 250px;
-						max-width: 250px;
+						max-width: 200px;
 					}
 				}
 			}

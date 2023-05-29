@@ -18,8 +18,7 @@
 		<a class="links__logo" href="/">iTourist</a>
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<div
-			on:click={(e) => {
-				e.stopPropagation();
+			on:click={() => {
 				handleBurgerMenu();
 			}}
 			class="burgerWrapper"
