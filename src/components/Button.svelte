@@ -16,15 +16,20 @@
 </button>
 
 <style lang="scss">
+	@import '../sass/variables';
 	a {
-		font-size: 18px;
+		font-size: 16px;
 		font-weight: bold;
 	}
 	.button {
 		cursor: pointer;
 		border-radius: 18px;
-		padding: 21px;
+		padding: 15px;
 		transition: all 0.5s ease;
+
+		@media (max-width: 640px) {
+			padding: 15px;
+		}
 		&:hover {
 			transform: scale(1.1);
 			transition: all 0.5s ease;

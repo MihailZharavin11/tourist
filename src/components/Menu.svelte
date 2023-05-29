@@ -1,32 +1,45 @@
 <script lang="ts">
+	import { scrolltoElement } from '../utils/scrollToElement';
+	import Languages from './Languages.svelte';
+
 	export let isOpenBurger: boolean;
-	export let closeBurgerMenu: () => void;
 </script>
 
 <div class="wrapper {isOpenBurger ? 'active' : ''}">
-	<div class="burger {isOpenBurger ? 'active' : ''}" on:click={closeBurgerMenu}>
-		<span />
-	</div>
 	<ul class="menu">
-		<li><a class="link" href="">Home</a></li>
-		<li><a class="link" href="">Pricing</a></li>
-
-		<li><a class="link" href="">About Us</a></li>
-
-		<li><a class="link" href="">Contact</a></li>
+		<li>
+			<a class="link" on:click={() => scrolltoElement('home')}>Home</a>
+		</li>
+		<li>
+			<a class="link" on:click={() => scrolltoElement('pricing')}>Pricing</a>
+		</li>
+		<li>
+			<a class="link" on:click={() => scrolltoElement('about')}>About Us</a>
+		</li>
+		<li>
+			<a class="link" on:click={() => scrolltoElement('contact')}>Contact</a>
+		</li>
+		<li>
+			<Languages />
+		</li>
 	</ul>
+	<div class="languages" />
 </div>
 
 <style lang="scss">
+	@import '../sass/variables';
+
 	.wrapper {
 		position: fixed;
 		height: 100vh;
-		width: 25vw;
+		width: 40vw;
+		top: 0px;
 		left: -1000px;
-		background: #f0f0f0;
-		padding: 50px;
+		background: white;
+		padding-top: 150px;
+		padding-left: 30px;
 		z-index: 20;
-		transition: all 1s ease;
+		transition: all 0.5s ease;
 		&.active {
 			left: 0;
 		}
@@ -105,10 +118,21 @@
 			display: flex;
 			flex-direction: column;
 			gap: 40px;
+			li {
+				transition: all 0.5s ease;
+				&:hover {
+					transform: translateX(5px);
+					transition: all 0.5s ease;
+				}
+			}
 			.link {
 				color: black;
-				font-size: 25px;
+				cursor: pointer;
+				@include adaptive-FS(20, 25);
 			}
+		}
+
+		.languages {
 		}
 	}
 </style>

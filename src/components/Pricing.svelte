@@ -2,7 +2,7 @@
 	import Button from './Button.svelte';
 </script>
 
-<div class="wrapper">
+<div id="pricing" class="wrapper">
 	<h1 class="title">Pricing</h1>
 	<div class="cards">
 		<div class="card">
@@ -53,8 +53,10 @@
 </div>
 
 <style lang="scss">
+	@import '../sass/variables';
+
 	.wrapper {
-		height: 100vh;
+		margin-top: 100px;
 		width: 100%;
 		display: flex;
 		flex-direction: column;
@@ -62,21 +64,30 @@
 		align-items: center;
 		gap: 50px;
 		.title {
-			font-size: 48px;
+			@include adaptive-FS(24, 48);
 			font-weight: bold;
 		}
 		.cards {
 			display: grid;
 			grid-template: 1fr/1fr 1fr 1fr;
 			width: 100%;
+			@media (max-width: 1024px) {
+				grid-template: 1fr 1fr 1fr/1fr;
+				gap: 30px;
+			}
 			.card {
 				padding: 25px;
 				display: grid;
 				grid-template: 1fr 5fr 1fr/1fr;
-				justify-content: space-between;
+				justify-content: stretch;
 				border: 2px solid transparent;
 				border-radius: 18px;
 				transition: all 0.5s ease;
+				@media (max-width: 1024px) {
+					grid-template: 1fr 2fr 1fr /1fr;
+					align-items: center;
+					padding: 10px;
+				}
 
 				&:hover {
 					transition: all 0.5s ease;
@@ -100,6 +111,14 @@
 						height: 4px;
 						background-color: #f0f0f0;
 					}
+
+					@media (max-width: 1024px) {
+						height: 100%;
+						align-items: center;
+						::after {
+							top: 80%;
+						}
+					}
 				}
 				.card__content {
 					display: flex;
@@ -108,6 +127,10 @@
 					justify-content: start;
 					gap: 30px;
 					margin-top: 40px;
+					@media (max-width: 1024px) {
+						align-items: center;
+						margin-top: 0px;
+					}
 					.content__title {
 						font-size: 19px;
 						font-weight: bold;
@@ -120,6 +143,9 @@
 						text-align: center;
 						margin-bottom: 100px;
 						max-width: 240px;
+						@media (max-width: 1024px) {
+							margin-bottom: 0px;
+						}
 					}
 				}
 			}

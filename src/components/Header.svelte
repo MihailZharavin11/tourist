@@ -1,107 +1,48 @@
-<script>
+<script lang="ts">
 	import Button from './Button.svelte';
-	import Spain from '../images/countries/es.png';
-	import France from '../images/countries/fr.png';
-	import Russia from '../images/countries/ru.png';
-	import England from '../images/countries/en.png';
-	import { fade, fly } from 'svelte/transition';
+
 	import { clickOutside } from '../utils/clickOutside';
 	import Menu from './Menu.svelte';
+	import { getContext, onMount } from 'svelte';
+	import { scrolltoElement } from '../utils/scrollToElement';
+	import Languages from './Languages.svelte';
 
-	const countries = [
-		{
-			value: Spain,
-			img: Spain
-		},
-		{
-			value: France,
-			img: France
-		},
-		{
-			value: Russia,
-			img: Russia
-		},
-		{
-			value: England,
-			img: England
-		}
-	];
-	let selectedCountry = England;
-	let isListVisible = false;
 	let isOpenBurger = false;
 
-	const handleClickOutside = () => {
-		isListVisible = false;
-	};
-
-	const closeBurgerMenu = () => {
-		isOpenBurger = false;
+	const handleBurgerMenu = () => {
+		isOpenBurger = !isOpenBurger;
 	};
 </script>
 
-<Menu {isOpenBurger} {closeBurgerMenu} />
-<div class="header">
+<Menu {isOpenBurger} />
+<div id="header" class="header">
 	<div class="links">
 		<a class="links__logo" href="/">iTourist</a>
-		<!-- <div
-			on:click={() => {
-				isOpenBurger = true;
-			}}
-			class="burger {isOpenBurger ? 'active' : ''}"
-		>
+		<div on:click={handleBurgerMenu} class="burger {isOpenBurger ? 'active' : ''}">
 			<span />
-		</div> -->
+		</div>
 		<ul class="links__list">
 			<li>
-				<a href="http://">Home</a>
+				<a class="link" on:click={() => scrolltoElement('home')}>Home</a>
 			</li>
 			<li>
-				<a href="http://">Pricing</a>
-			</li>
-
-			<li>
-				<a href="http://">About Us</a>
+				<a class="link" on:click={() => scrolltoElement('pricing')}>Pricing</a>
 			</li>
 			<li>
-				<a href="http://">Contact</a>
+				<a class="link" on:click={() => scrolltoElement('about')}>About Us</a>
+			</li>
+			<li>
+				<a class="link" on:click={() => scrolltoElement('contact')}>Contact</a>
 			</li>
 		</ul>
 	</div>
 
 	<div class="buttons">
-		<Button title="Log In" background="none" />
+		<!-- <Button title="Log In" background="none" /> -->
+
+		<Languages />
 		<Button title="Launch App" color="white" />
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
-		<div
-			on:click={() => {
-				isListVisible = !isListVisible;
-			}}
-			class="country__button"
-		>
-			<img src={selectedCountry} alt="" />
-			<!-- transition:fade -->
-			{#if isListVisible}
-				<div
-					use:clickOutside
-					on:click_outside={handleClickOutside}
-					style="height: {isListVisible ? '100%' : '0px'} ;"
-					translate="yes"
-					class="country_lists"
-				>
-					{#each countries as country}
-						{#if country.value !== selectedCountry}
-							<img
-								on:click={() => {
-									selectedCountry = country.value;
-								}}
-								src={country.img}
-								alt="country"
-							/>
-						{/if}
-					{/each}
-				</div>
-			{/if}
-		</div>
 	</div>
 </div>
 
@@ -111,7 +52,21 @@
 		align-items: center;
 		justify-content: space-between;
 		border-bottom: 1px solid #f0f0f0;
-		padding: 41px 144px 45px;
+		position: sticky;
+		top: 0;
+		left: 0;
+		background: white;
+		width: 100%;
+		z-index: 20;
+		padding: 35px 144px 35px;
+
+		@media (max-width: 768px) {
+			padding: 50px;
+		}
+
+		@media (max-width: 640px) {
+			padding: 20px 10px;
+		}
 
 		a {
 			color: #030303;
@@ -120,41 +75,32 @@
 		.links {
 			display: flex;
 			gap: 80px;
+
+			@media (max-width: 768px) {
+				gap: 40px;
+			}
+
+			@media (max-width: 640px) {
+				gap: 20px;
+			}
+			.links__list {
+				@media (max-width: 1024px) {
+					ul,
+					li {
+						display: none;
+					}
+				}
+			}
 			.links__logo {
 				color: #030303;
 				font-size: 28px;
 				font-weight: bold;
 			}
 
-			.burger.active {
-				transition: all 0.5s ease;
-
-				span {
-					transition: all 0.5s ease;
-					height: 3px;
-					transform: translateX(30px);
-					opacity: 0;
-				}
-
-				&::before {
-					height: 3px;
-
-					transition: all 0.5s ease;
-					top: 15px;
-					transform: rotate(-45deg);
-				}
-
-				&::after {
-					height: 3px;
-
-					bottom: 12px;
-					transform: rotate(45deg);
-				}
-			}
-
 			.burger {
-				width: 30px;
-				height: 30px;
+				display: none;
+				width: 20px;
+				height: 20px;
 				position: relative;
 				transition: all 0.5s ease;
 				z-index: 0;
@@ -163,7 +109,7 @@
 					transition: all 0.5s ease;
 
 					position: absolute;
-					top: 15px;
+					top: 10px;
 					width: 30px;
 					border-radius: 18px;
 					height: 2px;
@@ -194,12 +140,50 @@
 					background-color: #030303;
 					height: 2px;
 				}
+
+				@media (max-width: 1024px) {
+					display: block;
+				}
+			}
+
+			.burger.active {
+				transition: all 0.5s ease;
+
+				span {
+					transition: all 0.5s ease;
+					height: 3px;
+					transform: translateX(30px);
+					opacity: 0;
+				}
+
+				&::before {
+					height: 3px;
+
+					transition: all 0.5s ease;
+					top: 8px;
+					transform: rotate(-45deg);
+				}
+
+				&::after {
+					height: 3px;
+
+					bottom: 10px;
+					transform: rotate(45deg);
+				}
 			}
 
 			.links__list {
 				display: flex;
 				align-items: center;
 				gap: 91px;
+
+				.link {
+					cursor: pointer;
+				}
+
+				@media (max-width: 1289px) {
+					gap: 40px;
+				}
 
 				> li {
 					font-size: 16px;
@@ -217,21 +201,37 @@
 		.buttons {
 			display: flex;
 			align-items: center;
-			gap: 10px;
+			gap: 40px;
 			position: relative;
 			.country__button {
+				@media (max-width: 1024px) {
+					display: none;
+				}
 				position: relative;
 				img {
 					width: 50px;
 					height: 50px;
 				}
-				.country_lists {
+				.countries {
 					position: absolute;
+					left: -10px;
 					top: 60px;
 					min-height: 200px;
-					display: flex;
-					gap: 20px;
-					flex-direction: column;
+					z-index: 100;
+					.countries__list {
+						padding: 10px;
+						display: flex;
+						flex-direction: column;
+						gap: 10px;
+						background: transparent;
+						-webkit-box-shadow: 1px 10px 39px 4px rgba(0, 0, 0, 0.54);
+						-moz-box-shadow: 1px 10px 39px 4px rgba(0, 0, 0, 0.54);
+						box-shadow: 1px 10px 39px 4px rgba(0, 0, 0, 0.54);
+						li {
+							width: 100%;
+							z-index: 100;
+						}
+					}
 					img {
 						width: 50px;
 						height: 40px;

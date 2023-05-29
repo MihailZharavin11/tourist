@@ -1,0 +1,8 @@
+$maxWidth: 1440;
+$minWidth: 375;
+
+@mixin adaptive-FS($minFS, $maxFS) {
+	font-size: calc(
+		#{$minFS}px + (#{$maxFS - $minFS}) * (100vw - #{$minWidth}px) / (#{$maxWidth - $minWidth})
+	);
+}

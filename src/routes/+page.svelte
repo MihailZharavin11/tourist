@@ -1,4 +1,5 @@
-<script>
+<script lang="ts">
+	import { afterUpdate } from 'svelte';
 	import Contact from '../components/Contact.svelte';
 	import Data from '../components/Data.svelte';
 	import Explore from '../components/Explore.svelte';
@@ -36,6 +37,10 @@
 		font-family: 'Roboto', sans-serif;
 		.container {
 			padding: 41px 144px 45px;
+			@media (max-width: 768px) {
+				border: 1px solid red;
+				padding: 50px;
+			}
 		}
 	}
 </style>

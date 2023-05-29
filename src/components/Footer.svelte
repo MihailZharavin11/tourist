@@ -34,6 +34,16 @@
 		padding: 41px 144px 45px;
 		border-top: 1px solid #f0f0f0;
 
+		@media (max-width: 768px) {
+			padding: 50px;
+			justify-content: space-between;
+			gap: 20px;
+		}
+		@media (max-width: 640px) {
+			padding: 20px 10px;
+			gap: 20px;
+		}
+
 		.brand {
 			display: flex;
 			flex-direction: column;

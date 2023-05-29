@@ -27,18 +27,21 @@
 </div>
 
 <style lang="scss">
+	@import '../sass/variables';
 	.wrapper {
+		margin-top: 100px;
 		display: grid;
 		grid-template: 1fr/1fr 1fr;
-		align-items: center;
-		height: 100vh;
+		@media (max-width: 1024px) {
+			grid-template: 1fr 2fr/1fr;
+			justify-items: center;
+			gap: 50px;
+		}
 		.description {
-			justify-self: center;
 			display: flex;
 			flex-direction: column;
-			justify-content: center;
 			align-items: start;
-			max-width: 483px;
+			align-self: center;
 			gap: 20px;
 
 			.description__subTitle {
@@ -46,7 +49,7 @@
 				font-weight: bold;
 			}
 			.description__title {
-				font-size: 32px;
+				@include adaptive-FS(24, 32);
 				font-weight: bold;
 				line-height: 40px;
 				max-width: 341px;
@@ -54,6 +57,10 @@
 			.description__text {
 				font-size: 16px;
 				line-height: 23px;
+				max-width: 430px;
+				@media (max-width: 1024px) {
+					max-width: 330px;
+				}
 			}
 		}
 		.images {

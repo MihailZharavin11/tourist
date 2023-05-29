@@ -4,7 +4,7 @@
 	import iTouristPoster from '../images/videoPreview.png';
 </script>
 
-<div class="wrapper">
+<div id="about" class="wrapper">
 	<div class="inner">
 		<div class="description">
 			<h1 class="description__title">Introducing iTourist</h1>
@@ -23,22 +23,39 @@
 </div>
 
 <style lang="scss">
+	@import '../sass/variables';
+
 	.wrapper {
 		display: flex;
-		height: 100vh;
 		align-items: center;
 		position: relative;
+		margin-top: 100px;
 		.inner {
 			gap: 20px;
 			border: 1px solid #f0f0f0;
 			display: flex;
 			justify-content: space-between;
+			align-items: center;
+			flex-wrap: wrap;
 			width: 100%;
-			padding: 100px;
+			padding: 80px;
 			-webkit-box-shadow: 0px 50px 0px -30px #f0f0f0;
 			-moz-box-shadow: 0px 50px 0px -30px #f0f0f0;
 			box-shadow: 0px 50px 0px -30px #f0f0f0;
 			border-radius: 50px;
+
+			@media (max-width: 1280px) {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				gap: 70px;
+			}
+			@media (max-width: 1024px) {
+				padding: 50px;
+			}
+			@media (max-width: 768px) {
+				padding: 30px;
+			}
 			.description {
 				display: flex;
 				flex-direction: column;
@@ -46,20 +63,26 @@
 				max-width: 381px;
 				gap: 20px;
 				.description__title {
-					font-size: 68px;
+					@include adaptive-FS(34, 68);
 					font-weight: bold;
 					line-height: 80px;
 				}
 
 				.description__text {
-					font-size: 20px;
+					@include adaptive-FS(18, 20);
+
 					line-height: 30px;
 				}
 			}
 			.video {
+				border: 1px solid red;
 				video {
 					max-width: 524px;
 					max-height: 296px;
+					@media (max-width: 1024px) {
+						width: 100%;
+						object-fit: fill;
+					}
 				}
 			}
 		}

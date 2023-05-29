@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Button from './Button.svelte';
 	import Itourist from '../images/Itourist.png';
 	import Org1 from '../images/org1.png';
@@ -7,7 +7,7 @@
 	import Org4 from '../images/org4.png';
 </script>
 
-<div class="wrapper">
+<div id="home" class="wrapper">
 	<div class="description__wrapper">
 		<div class="description__content">
 			<p class="description__assistant">- Explore Israel with virtual assistant</p>
@@ -44,6 +44,7 @@
 </div>
 
 <style lang="scss">
+	@import '../sass/variables';
 	.wrapper {
 		margin-top: 100px;
 		color: #030303;
@@ -51,30 +52,52 @@
 		flex-direction: column;
 		justify-content: center;
 		gap: 100px;
-		height: 100vh;
+		@media (max-width: 1024px) {
+			gap: 30px;
+			margin-top: 0px;
+		}
 
 		.description__wrapper {
 			display: grid;
 			grid-template: 1fr/1fr 1fr;
+
+			@media (max-width: 1024px) {
+				grid-template: 1fr 1fr/1fr;
+				align-self: center;
+				justify-content: center;
+			}
 			.description__content {
 				display: flex;
 				flex-direction: column;
-				max-width: 542px;
 				gap: 20px;
+				@media (max-width: 1024px) {
+					align-items: start;
+				}
+
+				@media (max-width: 640px) {
+					justify-content: center;
+				}
+
 				.description__assistant {
 					font-size: 13px;
 					font-weight: bold;
+					@media (max-width: 1024px) {
+						align-self: flex-start;
+					}
 				}
 
 				.description__title {
-					font-size: 72px;
+					@include adaptive-FS(23, 55);
 					max-width: 489px;
 					font-weight: bold;
-					line-height: 80px;
+					line-height: 60px;
+					@media (max-width: 640px) {
+						line-height: 30px;
+					}
 				}
 
 				.description__text {
-					font-size: 20px;
+					@include adaptive-FS(16, 20);
 					line-height: 27px;
 				}
 
@@ -87,6 +110,11 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
+				img {
+					max-height: 300px;
+					max-width: 350px;
+					width: 100%;
+				}
 			}
 		}
 		.organizations {
@@ -99,7 +127,15 @@
 			gap: 40px;
 			.organization__images {
 				display: flex;
-				gap: 50px;
+				gap: 70px;
+				@media (max-width: 768px) {
+					gap: 20px;
+				}
+				@media (max-width: 640px) {
+					display: grid;
+					grid-template: 1fr 1fr/1fr 1fr;
+					gap: 50px;
+				}
 			}
 			img {
 				width: 84px;

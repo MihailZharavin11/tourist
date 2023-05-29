@@ -142,8 +142,10 @@
 </div>
 
 <style lang="scss">
+	@import '../sass/variables';
+
 	.wrapper {
-		height: 100vh;
+		margin-top: 100px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -156,19 +158,25 @@
 			justify-content: center;
 			align-items: center;
 			gap: 20px;
+
 			.title {
-				font-size: 48px;
+				@include adaptive-FS(24, 48);
 				font-weight: bold;
 			}
 			.text {
-				font-size: 20;
+				@include adaptive-FS(18, 20);
 			}
 		}
 		.content {
 			display: flex;
 			width: 100%;
 			justify-content: space-between;
-
+			gap: 20px;
+			@media (max-width: 1280px) {
+				flex-direction: column;
+				align-items: center;
+				gap: 30px;
+			}
 			.item {
 				display: grid;
 				grid-template: 1fr 1fr/1fr;
