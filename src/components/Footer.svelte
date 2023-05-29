@@ -28,6 +28,8 @@
 </div>
 
 <style lang="scss">
+	@import '../sass/variables';
+
 	.wrapper {
 		display: flex;
 		gap: 100px;
@@ -50,11 +52,11 @@
 			gap: 20px;
 			max-width: 148px;
 			.brand__title {
-				font-size: 28px;
+				@include adaptive-FS(20, 28);
 				font-weight: bold;
 			}
 			.brand__text {
-				font-size: 16px;
+				@include adaptive-FS(14, 16);
 			}
 		}
 		.links {

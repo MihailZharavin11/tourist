@@ -21,7 +21,7 @@
 					boxShadow={true}
 					title="See how it works"
 					color="black"
-					background="#d9d8d4"
+					background="white"
 					border={'1px solid grey'}
 				/>
 			</div>
@@ -102,7 +102,9 @@
 				}
 
 				.buttons {
-					display: flex;
+					display: grid;
+					grid-template: 1fr/1fr 1fr;
+					max-width: 400px;
 					gap: 30px;
 				}
 			}

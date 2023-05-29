@@ -18,7 +18,7 @@
 <div id="header" class="header">
 	<div class="links">
 		<a class="links__logo" href="/">iTourist</a>
-		<div on:click={handleBurgerMenu} class="burger {isOpenBurger ? 'active' : ''}">
+		<div on:click={handleBurgerMenu} class="burger">
 			<span />
 		</div>
 		<ul class="links__list">
@@ -39,8 +39,9 @@
 
 	<div class="buttons">
 		<!-- <Button title="Log In" background="none" /> -->
-
-		<Languages />
+		<div class="languages">
+			<Languages />
+		</div>
 		<Button title="Launch App" color="white" />
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
 	</div>
@@ -75,6 +76,7 @@
 		.links {
 			display: flex;
 			gap: 80px;
+			align-items: center;
 
 			@media (max-width: 768px) {
 				gap: 40px;
@@ -146,32 +148,6 @@
 				}
 			}
 
-			.burger.active {
-				transition: all 0.5s ease;
-
-				span {
-					transition: all 0.5s ease;
-					height: 3px;
-					transform: translateX(30px);
-					opacity: 0;
-				}
-
-				&::before {
-					height: 3px;
-
-					transition: all 0.5s ease;
-					top: 8px;
-					transform: rotate(-45deg);
-				}
-
-				&::after {
-					height: 3px;
-
-					bottom: 10px;
-					transform: rotate(45deg);
-				}
-			}
-
 			.links__list {
 				display: flex;
 				align-items: center;
@@ -203,6 +179,11 @@
 			align-items: center;
 			gap: 40px;
 			position: relative;
+			.languages {
+				@media (max-width: 1024px) {
+					display: none;
+				}
+			}
 			.country__button {
 				@media (max-width: 1024px) {
 					display: none;

@@ -17,8 +17,8 @@
 			boxShadow={true}
 			title="Try now"
 			color="black"
-			background="#d9d8d4"
-			border={'1px solid grey'}
+			background="white"
+			border={'1px solid black'}
 		/>
 	</div>
 	<div class="images">

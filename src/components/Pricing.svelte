@@ -11,9 +11,9 @@
 			</div>
 			<div class="card__content">
 				<div class="content__title">Package price + 5₪ fee</div>
-				<div class="content__description">
-					<p class="content__text">Stay connected 24/7</p>
-				</div>
+				<ul class="content__description">
+					<li class="content__text">Stay connected 24/7</li>
+				</ul>
 			</div>
 			<Button color="white" title="Go to the App and orded" />
 		</div>
@@ -23,13 +23,13 @@
 			</div>
 			<div class="card__content">
 				<div class="content__title">250₪</div>
-				<div class="content__description">
-					<p class="content__text">
+				<ul class="content__description">
+					<li class="content__text">
 						Virtual appointment with a doctor in 15-30 minutes after the payment
-					</p>
-					<p class="content__text">Medical prescriptions</p>
-					<p class="content__text">Laboratory test prescriptions</p>
-				</div>
+					</li>
+					<li class="content__text">Medical prescriptions</li>
+					<li class="content__text">Laboratory test prescriptions</li>
+				</ul>
 			</div>
 			<Button color="white" title="Go to the App and orded" />
 		</div>
@@ -39,13 +39,13 @@
 			</div>
 			<div class="card__content">
 				<div class="content__title">400₪</div>
-				<div class="content__description">
-					<p class="content__text">
+				<ul class="content__description">
+					<li class="content__text">
 						2 virtual appointments with a doctor in 15-30 minutes after the payment*
-					</p>
-					<p class="content__text">Medical prescriptions</p>
-					<p class="content__text">Laboratory test prescriptions</p>
-				</div>
+					</li>
+					<li class="content__text">Medical prescriptions</li>
+					<li class="content__text">Laboratory test prescriptions</li>
+				</ul>
 			</div>
 			<Button color="white" title="Go to the App and orded" />
 		</div>
@@ -145,6 +145,9 @@
 						max-width: 240px;
 						@media (max-width: 1024px) {
 							margin-bottom: 0px;
+						}
+						@media (max-width: 1024px) {
+							gap: 20px;
 						}
 					}
 				}

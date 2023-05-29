@@ -67,9 +67,6 @@
 
 <style lang="scss">
 	.country__button {
-		@media (max-width: 1024px) {
-			display: none;
-		}
 		position: relative;
 		img {
 			width: 50px;

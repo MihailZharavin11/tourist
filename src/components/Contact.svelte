@@ -10,7 +10,7 @@
 				<input placeholder="Name" class="contact__input" />
 				<input placeholder="Email Adress" class="contact__input" />
 				<input placeholder="Write your message" class="contact__input" />
-				<Button title="Send" color="black" background="#f0f0f0" />
+				<Button title="Send" color="black" border="1px solid black" background="white" />
 			</form>
 		</div>
 		<div class="info">
@@ -46,7 +46,8 @@
 		.description {
 			display: grid;
 			grid-template: 1fr / 1fr 1fr;
-			gap: 20px;
+			justify-content: space-between;
+			gap: 70px;
 
 			@media (max-width: 1024px) {
 				grid-template: 1fr 1fr/1fr;

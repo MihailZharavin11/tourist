@@ -51,7 +51,9 @@
 				gap: 70px;
 			}
 			@media (max-width: 1024px) {
-				padding: 50px;
+				border: none;
+				padding: 0px;
+				box-shadow: none;
 			}
 			@media (max-width: 768px) {
 				padding: 30px;

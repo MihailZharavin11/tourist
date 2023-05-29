@@ -23,7 +23,6 @@
 			<Languages />
 		</li>
 	</ul>
-	<div class="languages" />
 </div>
 
 <style lang="scss">
@@ -133,6 +132,8 @@
 		}
 
 		.languages {
+			width: 100px;
+			height: 100px;
 		}
 	}
 </style>
