@@ -4,6 +4,16 @@
 	box-sizing: border-box;
 }
 
+
+svg{
+	border:none;
+	outline: none;
+}
+svg:active{
+	border:none;
+	outline: none;
+}
+
 a:active,
 a:hover,
 a {

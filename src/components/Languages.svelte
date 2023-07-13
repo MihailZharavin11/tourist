@@ -1,34 +1,32 @@
 <script>
-	import Spain from '../images/countries/es.png';
-	import France from '../images/countries/fr.png';
-	import Russia from '../images/countries/ru.png';
-	import England from '../images/countries/en.png';
 	import { clickOutside } from '../utils/clickOutside';
-	import { locale } from '$lib/i18n/config';
+    import * as Flag from 'svelte-flag-icons';
 
-	const countries = [
-		{
-			value: Spain,
-			img: Spain,
-			locale: 'esp'
-		},
-		{
-			value: France,
-			img: France,
-			locale: 'fr'
-		},
-		{
-			value: Russia,
-			img: Russia,
-			locale: 'ru'
-		},
-		{
-			value: England,
-			img: England,
-			locale: 'en'
-		}
-	];
-	let selectedCountry = England;
+
+
+
+    const countryList = [
+        {
+            value: 'Gb',
+	        locale:'en'
+        },
+        {
+            value: 'Ru',
+	        locale: 'ru'
+        },
+        {
+            value: 'Fr',
+	        locale: 'fr'
+        },
+        {
+            value: 'Es',
+	        locale: 'es'
+        }
+
+    ]
+	let selectedCountry = 'Gb'
+
+
 	let isListVisible = false;
 
 	const handleCountriesList = () => {
@@ -36,8 +34,12 @@
 	};
 </script>
 
+
+
+
+
 <div on:click={handleCountriesList} class="country__button">
-	<img src={selectedCountry} alt="" />
+	<svelte:component  this="{Flag[selectedCountry]}" size="50" />
 	<!-- transition:fade -->
 	{#if isListVisible}
 		<div
@@ -52,17 +54,12 @@
 			class="countries"
 		>
 			<ul class="countries__list">
-				{#each countries as country}
+				{#each countryList as country}
 					{#if country.value !== selectedCountry}
 						<li>
-							<img
-								on:click={() => {
-									selectedCountry = country.value;
-									locale.set(country.locale);
-								}}
-								src={country.img}
-								alt="country"
-							/>
+							<svelte:component on:click={()=>{
+                                selectedCountry = country.value;
+							}}  this="{Flag[country.value]}" size="50" />
 						</li>
 					{/if}
 				{/each}
@@ -73,6 +70,7 @@
 
 <style lang="scss">
 	.country__button {
+
 		position: relative;
 		img {
 			width: 50px;

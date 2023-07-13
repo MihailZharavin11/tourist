@@ -31,7 +31,8 @@
 					}}
 					class="menuWrapper {isOpenBurger ? '' : 'hidden'}"
 				>
-					<ul class="menu">
+					<div on:click={()=>{handleBurgerMenu()}} class="blur"></div>
+					<ul class="menu {isOpenBurger?'active':''}">
 						<li>
 							<a class="link" on:click={() => scrolltoElement('home')}
 								>{$t('translations.header.links.home')}</a
@@ -223,6 +224,7 @@
 			align-items: center;
 			gap: 40px;
 			position: relative;
+		    z-index: -5;
 			.languages {
 				@media (max-width: 1024px) {
 					display: none;
@@ -261,7 +263,6 @@
 						width: 50px;
 						height: 40px;
 						transition: all 0.5s ease;
-
 						&:hover {
 							transition: all 0.5s ease;
 							transform: scale(1.2);
@@ -272,36 +273,57 @@
 		}
 
 		.burgerWrapper {
-			position: relative;
 			.menuWrapper {
-				width: 200px;
-				position: absolute;
-				top: 30px;
-				left: 0;
-				padding: 10px 10px;
-				background: white;
+			  opacity: 1;
+			  .blur{
+			    height: 100%;
+			    width: 100%;
+			    backdrop-filter: blur(2px);
+			  }
+			  position: fixed;
+			  top:0;
+			  z-index: 40;
+			  right: 0;
+			  width: 100%;
+			  height: 100%;
 				.menu {
+				  position: fixed;
+				  top:0;
+				  right: -1000px;
+				  height: 100%;
+				  width: 50%;
+				  z-index: 50;
+                  box-shadow: 3px 10px 10px black;
+				  background: white;
 					display: flex;
 					flex-direction: column;
-					gap: 20px;
-					opacity: 1;
+				    align-items: center;
+                    padding-top: 50px;
+					gap: 70px;
 					transition: all 0.5s ease;
+					&.active{
+					  right: 0;
+					  transition: all 0.5s ease;
+					}
 
 					li {
 						transition: all 0.5s ease;
 						&:hover {
-							transform: translateX(5px);
+							transform: translateY(-5px);
 							transition: all 0.5s ease;
 						}
 					}
 					.link {
 						color: black;
 						cursor: pointer;
-						font-size: 20px;
+						font-size: 24px;
+					    font-weight: 600;
 					}
 				}
 				&.hidden {
-					display: none;
+					//display: none;
+				  opacity: 0;
+				  transition: all 0.5s ease;
 				}
 			}
 		}
